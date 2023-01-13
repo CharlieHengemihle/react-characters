@@ -1,6 +1,22 @@
+import { useState } from 'react';
 import './Editor.css';
 
-export default function Editor({ head, setHead, shirt, setShirt, bottom, setBottom }) {
+export default function Editor({
+  head,
+  setHead,
+  shirt,
+  setShirt,
+  bottom,
+  setBottom,
+  setCatchphrase,
+}) {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleClick = (e) => {
+    setCatchphrase((e) => [inputValue]);
+    setInputValue('');
+  };
+
   return (
     <div className="editor">
       <div className="form">
@@ -22,6 +38,9 @@ export default function Editor({ head, setHead, shirt, setShirt, bottom, setBott
           <option value="tripp">Cool Goth</option>
           <option value="clown">Life of The Party</option>
         </select>
+        <label>Give us a catchphrase!</label>
+        <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <button onClick={handleClick}>Add</button>
       </div>
     </div>
   );

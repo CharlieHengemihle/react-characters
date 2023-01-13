@@ -5,11 +5,12 @@ import { useState } from 'react';
 
 export default function Main() {
   const [head, setHead] = useState('duck');
+  const [shirt, setShirt] = useState('blue');
 
   return (
     <main>
-      <Preview {...{ head }} />
-      <Editor {...{ head, setHead }} />
+      <Preview {...{ head, shirt }} />
+      <Editor {...{ head, setHead, shirt, setShirt }} />
       {/* <Log {...} /> */}
     </main>
   );

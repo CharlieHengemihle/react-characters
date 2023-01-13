@@ -1,0 +1,33 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 5px red;
+  align-items: center;
+}
+
+.head {
+  height: 10vh;
+}
+
+.snake {
+  right: 20px;
+  position: relative;
+}
+.duck {
+  left: 15px;
+  position: relative;
+}
+
+.horse {
+  right: 10px;
+  position: relative;
+}
+
+.shirt {
+  height: 20vh;
+}
+
+.bottom {
+  height: 25vh;
+}

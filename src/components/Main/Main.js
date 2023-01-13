@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function Main() {
   const [head, setHead] = useState('duck');
-  const [shirt, setShirt] = useState('blue');
+  const [shirt, setShirt] = useState('pink');
   const [bottom, setBottom] = useState('jnco');
 
   return (

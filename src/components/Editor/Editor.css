@@ -1,0 +1,6 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 5px red;
+  align-items: center;
+}

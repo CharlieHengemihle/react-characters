@@ -9,11 +9,35 @@ export default function Editor({
   bottom,
   setBottom,
   setCatchphrase,
+  setHeadCount,
+  setShirtCount,
+  setBottomCount,
 }) {
   const [inputValue, setInputValue] = useState('');
 
-  const handleClick = (e) => {
-    setCatchphrase((e) => [inputValue]);
+  const handleHead = (e) => {
+    setHead(e.target.value);
+    setHeadCount((currentState) => {
+      return currentState + 1;
+    });
+  };
+
+  const handleShirt = (e) => {
+    setShirt(e.target.value);
+    setShirtCount((currentState) => {
+      return currentState + 1;
+    });
+  };
+
+  const handleBottom = (e) => {
+    setBottom(e.target.value);
+    setBottomCount((currentState) => {
+      return currentState + 1;
+    });
+  };
+
+  const handleClick = () => {
+    setCatchphrase((currentState) => [...currentState, inputValue]);
     setInputValue('');
   };
 
@@ -21,19 +45,19 @@ export default function Editor({
     <div className="editor">
       <div className="form">
         <label>Head</label>
-        <select value={head} onChange={(e) => setHead(e.target.value)}>
+        <select value={head} onChange={handleHead}>
           <option value="duck">Duck?</option>
           <option value="horse">Horse?</option>
           <option value="snake">SNAKE!</option>
         </select>
         <label>Shirt</label>
-        <select value={shirt} onChange={(e) => setShirt(e.target.value)}>
+        <select value={shirt} onChange={handleShirt}>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
           <option value="pink">Pink</option>
         </select>
         <label>Bottoms</label>
-        <select value={bottom} onChange={(e) => setBottom(e.target.value)}>
+        <select value={bottom} onChange={handleBottom}>
           <option value="jnco">Big Flair</option>
           <option value="tripp">Cool Goth</option>
           <option value="clown">Life of The Party</option>

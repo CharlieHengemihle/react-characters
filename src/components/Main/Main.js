@@ -8,28 +8,32 @@ export default function Main() {
   const [head, setHead] = useState('duck');
   const [shirt, setShirt] = useState('pink');
   const [bottom, setBottom] = useState('jnco');
-  const [catchphrase, setCatchphrase] = useState('');
-  const [headCount] = useState(0);
-  const [shirtCount] = useState(0);
-  const [bottomCount] = useState(0);
+  const [catchphrase, setCatchphrase] = useState([]);
+  const [headCount, setHeadCount] = useState(0);
+  const [shirtCount, setShirtCount] = useState(0);
+  const [bottomCount, setBottomCount] = useState(0);
 
   return (
     <main>
-      <Preview {...{ head, shirt, bottom }} />
       <Editor
         {...{
           head,
           setHead,
+          setHeadCount,
           shirt,
           setShirt,
+          setShirtCount,
           bottom,
           setBottom,
+          setBottomCount,
+          catchphrase,
           setCatchphrase,
           headCount,
           shirtCount,
           bottomCount,
         }}
       />
+      <Preview {...{ head, shirt, bottom }} />
       <Log {...{ catchphrase, headCount, shirtCount, bottomCount }} />
     </main>
   );
